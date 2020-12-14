@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+/**
+ * 传统调用方式-基本使用
+ */
 @RestController
 public class HelloController {
     @Value("${server.port}")
@@ -37,5 +39,7 @@ public class HelloController {
         System.out.println(new Date() +"---->"+ ids);
         return  list ;
     }
+
+
 
 }
