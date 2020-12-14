@@ -4,6 +4,9 @@ import Entity.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 方式1 使用OpenFeign
+ */
 @FeignClient("provider")
 public interface HelloService {
     @GetMapping("/hello")
