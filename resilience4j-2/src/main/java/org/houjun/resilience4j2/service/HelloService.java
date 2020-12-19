@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-@Service
-//@Retry(name = "retryA")
+@Retry(name = "retryA")
 @CircuitBreaker(name = "cbA",fallbackMethod = "error")
+@Service
 public class HelloService {
     @Autowired
    private RestTemplate restTemplate;
@@ -18,10 +18,12 @@ public class HelloService {
         return restTemplate.getForObject("http://localhost:1113/hello4",String.class);
     }
 
+    // 服务降级后访问的方法
     public String error(Throwable throwable){
         System.out.println("error"+throwable.getMessage());
         return "error"+throwable.getMessage();
     }
+
 
     public String hello5(){
         for (int i = 0; i < 5; i++) {

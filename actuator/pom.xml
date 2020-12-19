@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.houjun</groupId>
-    <artifactId>resilience4j-2</artifactId>
+    <artifactId>actuator</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>resilience4j-2</name>
+    <name>actuator</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -13,42 +13,21 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.2.4.RELEASE</spring-boot.version>
-        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>io.github.resilience4j</groupId>
-            <artifactId>resilience4j-spring-boot2</artifactId>
-            <version>1.2.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.github.resilience4j</groupId>
-                    <artifactId>resilience4j-circuitbreaker</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>io.github.resilience4j</groupId>
-                    <artifactId>resilience4j-ratelimiter</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>io.github.resilience4j</groupId>
-                    <artifactId>resilience4j-timelimiter</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>io.github.resilience4j</groupId>
-                    <artifactId>resilience4j-bulkhead</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -64,13 +43,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -98,7 +70,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>org.houjun.resilience4j2.Resilience4j2Application</mainClass>
+                    <mainClass>org.houjun.actuator.ActuatorApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
