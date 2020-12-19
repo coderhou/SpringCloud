@@ -9,12 +9,14 @@
         <module name="openfeign" />
         <module name="hystrix" />
         <module name="provider" />
+        <module name="resilience4j-2" />
         <module name="eureka" />
         <module name="consul-consumer" />
         <module name="consul-provider" />
         <module name="hello-api" />
         <module name="consumer" />
         <module name="commons" />
+        <module name="resilience4j" />
       </profile>
     </annotationProcessing>
   </component>

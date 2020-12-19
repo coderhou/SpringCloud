@@ -1,6 +1,7 @@
 package org.hj.provider.controller;
 
 import Entity.User;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,6 +41,18 @@ public class HelloController {
         return  list ;
     }
 
+    @GetMapping("/hello4")
+    public String hello4( ){
+        System.out.println(new Date() +"---->");
+        int i = 1 /0;
+        return "hello";
+    }
 
+    @GetMapping("/hello5")
+    @RateLimiter(name = "rlA")
+    public String hello5( ){
+        System.out.println(new Date() +"hello5");
+        return "hello";
+    }
 
 }
