@@ -1,0 +1,30 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+#        - id: javaboy_route
+#          uri: http://www.javaboy.org
+#          predicates:
+#            - Path=/2019/0612/{segment}
+        - id: houjun
+          uri: http://httpbin.org
+          filters:
+            - AddRequestParameter=name,javaboy
+          predicates:
+#            - Path=/get
+            - Query=name,java.*
+#            - Before=2021-01-01T01:01:01+08:00[Asia/Shanghai]
+#            - Method=GET
+      discovery:
+        locator:
+          enabled: true #开启路由转发  自动代理
+  application:
+    name: gateway
+logging:
+  level:
+    org.springframework.cloud.gateway: debug # 开启日志
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka   #配置注册中心
+
