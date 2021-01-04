@@ -18,6 +18,7 @@
         <module name="actuator" />
         <module name="provider" />
         <module name="resilience4j-2" />
+        <module name="stream" />
         <module name="consul-provider" />
         <module name="hello-api" />
         <module name="consumer" />
