@@ -22,6 +22,8 @@
         <option value="$PROJECT_DIR$/sleuth/pom.xml" />
         <option value="$PROJECT_DIR$/zipkin/pom.xml" />
         <option value="$PROJECT_DIR$/nacos/pom.xml" />
+        <option value="$PROJECT_DIR$/nacos01/pom.xml" />
+        <option value="$PROJECT_DIR$/sentinel1/pom.xml" />
       </list>
     </option>
   </component>

@@ -8,12 +8,16 @@
         <outputRelativeToContentRoot value="true" />
         <module name="openfeign" />
         <module name="hystrix" />
+        <module name="sentinel1" />
+        <module name="sleuth" />
         <module name="eureka" />
         <module name="config-client" />
         <module name="consul-consumer" />
         <module name="zuul" />
         <module name="commons" />
         <module name="resilience4j" />
+        <module name="nacos" />
+        <module name="nacos01" />
         <module name="config-server" />
         <module name="actuator" />
         <module name="provider" />
